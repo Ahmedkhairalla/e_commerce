@@ -15,7 +15,7 @@
          @foreach ($products as $product )
         <div class="col-md-4">
           <div class="product-item">
-            <a href="#"><img src="{{ asset("storage/$product->image") }}" alt=""></a> 
+            <a href="{{ url("ShowProduct/$product->id") }}"><img src="{{ asset("storage/$product->image") }}" alt=""></a>
             <div class="down-content">
               <a href="#"><h4>{{ $product->name }}</h4></a>
               <h6>LE{{ $product->price }}</h6>

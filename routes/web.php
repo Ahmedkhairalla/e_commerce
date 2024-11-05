@@ -23,6 +23,7 @@ Route::get('home',function(){
     return view('admin.home');
 });
 Route::get('home',[HomeController::class, 'index']);
+Route::get('home',[UserProductController::class, 'index']);
 Route::get('changeLang/{Lang}',[ChangeLangController::class, 'index']);
 
 Route::middleware(['auth' ,'IsAdmin'])->group(function(){
@@ -46,6 +47,8 @@ Route::middleware(['auth' ,'IsAdmin'])->group(function(){
 Route::controller(UserProductController::class)->group(function(){
 
     Route::get('userProducts','index');
+    Route::get('ShowProduct/{id}','show');
+
 
 
 
